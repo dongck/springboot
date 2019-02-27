@@ -10,8 +10,7 @@ import org.springframework.stereotype.Component;
  */
 import org.springframework.web.context.WebApplicationContext;
 @Component
-//@Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-@Scope(WebApplicationContext.SCOPE_REQUEST)
+@Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class ScopeClass {
 
 }
