@@ -12,8 +12,6 @@ public class ProfileTest {
 		String s = (String) ctx.getBean("env");
 		
 		System.out.println(s);
-
-
 	}
 
 }
