@@ -43,5 +43,6 @@ public class TeacherController {
 	public void del(@RequestParam Long id){
 		jpaTeacherRepository.deleteById(id);
 	}
+	
 
 }
