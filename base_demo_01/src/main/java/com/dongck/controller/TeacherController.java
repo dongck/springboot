@@ -2,8 +2,12 @@ package com.dongck.controller;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.ListOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +23,16 @@ import com.dongck.service.TeacherService;
 @RestController
 @RequestMapping("/teacher")
 public class TeacherController {
+	
+	// inject the actual template
+    @Autowired
+    private RedisTemplate<String, String> redisTemplate;
+
+    // inject the template as ListOperations
+    // can also inject as Value, Set, ZSet, and HashOperations
+    @Resource(name="redisTemplate")
+    private ListOperations<String, String> listOps;
+    
 	@Autowired
 	private TeacherService teacherService;
 	
